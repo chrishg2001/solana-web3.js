@@ -1,5 +1,6 @@
 {
     "private": true,
+    "name": "@solana/web3.js",
     "version": "0.0.0",
     "workspaces": [
         "packages/*"
