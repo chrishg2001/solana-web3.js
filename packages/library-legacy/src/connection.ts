@@ -1560,22 +1560,6 @@ function createRpcClient(
       }
     } else {
       if (httpAgent !== false) {
-        const isHttps = url.startsWith('https:');
-        if (isHttps && !(httpAgent instanceof NodeHttpsAgent)) {
-          throw new Error(
-            'The endpoint `' +
-              url +
-              '` can only be paired with an `https.Agent`. You have, instead, supplied an ' +
-              '`http.Agent` through `httpAgent`.',
-          );
-        } else if (!isHttps && httpAgent instanceof NodeHttpsAgent) {
-          throw new Error(
-            'The endpoint `' +
-              url +
-              '` can only be paired with an `http.Agent`. You have, instead, supplied an ' +
-              '`https.Agent` through `httpAgent`.',
-          );
-        }
         agent = httpAgent;
       }
     }
